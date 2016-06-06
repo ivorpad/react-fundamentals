@@ -1,7 +1,17 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 var transparentBg = require('../styles').transparentBg;
 
+
+
 var Prompt = React.createClass({
+  
+  propTypes: {
+    header: PropTypes.string.isRequired,
+    onSubmitUser: PropTypes.func.isRequired
+    username: PropTypes.string.isRequired
+    onUpdateUser: PropTypes.func.isRequired
+  },
 
   render: function() {
     return (
