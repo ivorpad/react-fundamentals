@@ -33,6 +33,16 @@ var ConfirmBattleContainer = React.createClass({
 
   },
 
+  handleInitiateBattle: function() {
+    this.context.router.push({
+      pathname: '/results',
+      state: {
+        // this will let us push `this.state.playersInfo` through `/results`
+        playersInfo: this.state.playersInfo
+      }
+    })
+  },
+
   componentWillReceiveProps: function(nextProps) {
     console.log('componentWillReceiveProps');
   },
@@ -45,6 +55,7 @@ var ConfirmBattleContainer = React.createClass({
     return (
       <ConfirmBattle 
         isLoading={this.state.isLoading}
+        onInitiateBattle={this.handleInitiateBattle}
         playersInfo={this.state.playersInfo}
        />
     );
